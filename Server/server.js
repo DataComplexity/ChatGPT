@@ -55,7 +55,6 @@ app.post("/api/chat", async (req, res) => {
     console.error("Error:", error);
     res.status(500).json({ error: "Something went wrong with the API call" });
   }
-  console.log(response.choices[0].message.content);
 });
 
 
