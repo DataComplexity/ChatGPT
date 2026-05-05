@@ -214,7 +214,36 @@ img {
 }
 
 .voiceImg {
-  filter: brightness(0) saturate(100%);
+  filter: brightness(2) contrast(100%);
+}
+
+/* Markdown Styles */
+.user_chat p, .assistant_chat p {
+  margin: 0;
+  padding: 0;
+}
+
+.assistant pre {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+}
+
+.assistant code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  background-color: #2a2a2a;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.assistant pre code {
+  background-color: transparent;
+  padding: 0;
 }
 
 .voice {
