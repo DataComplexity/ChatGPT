@@ -25,7 +25,20 @@ const app = express();
 //   res.sendStatus(204); // No Content
 // });
 
-app.use(cors());
+// CORS configuration (production + local)
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "https://chatgpt-fsu4.onrender.com"
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+};
+
+app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options("*", cors(corsOptions));
 
 app.use(express.json());
 
