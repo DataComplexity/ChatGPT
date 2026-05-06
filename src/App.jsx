@@ -38,7 +38,7 @@ export default function App() {
   const API_URL =
   import.meta.env.MODE === "development"
     ? "http://localhost:5000"
-    : "https://chatgpt-backend-nry5.onrender.com";
+    : "https://chatgpt-backend-2mmm.onrender.com";
 
   // Function to handle sending data to the API
   const sendToAPI = async () => {
