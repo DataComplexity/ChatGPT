@@ -7,23 +7,25 @@ dotenv.config();
 
 const app = express();
 
-// CORS configuration
-const corsOptions = {
-  origin: ["http://localhost:5000", "http://localhost:5173"],
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type"],
-};
+// // CORS configuration
+// const corsOptions = {
+//   origin: ["http://localhost:5000", "http://localhost:5173"],
+//   methods: ["GET", "POST", "OPTIONS"],
+//   allowedHeaders: ["Content-Type"],
+// };
 
-// Apply CORS middleware
-app.use(cors(corsOptions));
+// // Apply CORS middleware
+// app.use(cors(corsOptions));
 
-// Explicitly handle OPTIONS requests for /api/chat
-app.options("/api/chat", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.sendStatus(204); // No Content
-});
+// // Explicitly handle OPTIONS requests for /api/chat
+// app.options("/api/chat", (req, res) => {
+//   res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+//   res.sendStatus(204); // No Content
+// });
+
+app.use(cors());
 
 app.use(express.json());
 
