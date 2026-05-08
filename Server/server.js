@@ -72,7 +72,7 @@ const path = require('path');
 app.use(express.static(path.join(process.cwd(), 'dist')));
 
 // 2. Route everything else to the index.html from the ROOT folder
-app.get('*', (req, res) => {
+app.get(/.*/, (req, res) => {
   res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
 });
 
