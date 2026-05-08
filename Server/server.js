@@ -66,6 +66,16 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
+const path = require('path');
+
+// 1. Serve the built frontend files
+app.use(express.static(path.join(__dirname, '../dist')));
+
+// 2. Route everything else to the index.html (for React Router)
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
